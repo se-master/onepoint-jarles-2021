@@ -18,7 +18,7 @@ ref = ["monday", "tuesday","wednesday", "thursday", "friday", "saturday", "sunda
 # Retourne l'horaire avec le nombre de shift chaque jour
 # Doit avoir minimum 2 shifts par jour
 def Scheduler(schedule, employes):
-    for i in range(employes.length):
+    for i in range(len(employes)):
         for j in range(4):
             schedule[employes[i].preference[j]] += 1
     return schedule
@@ -31,5 +31,5 @@ employe4 = Employe("Micheal", 4, ["thursday", "friday", "saturday", "sunday"])
     
 schedule = {"monday": 0, "tuesday":0,"wednesday":0, "thursday":0, "friday":0, "saturday":0, "sunday":0}
 employes = [employe1, employe2, employe3, employe4]
-print(employes.count)
-#print(Scheduler(schedule, employes))
+
+print(Scheduler(schedule, employes))
