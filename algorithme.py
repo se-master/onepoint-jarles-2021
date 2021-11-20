@@ -1,4 +1,5 @@
 from datetime import datetime
+import json
 
 class Day():
     def __init__(self, name):
@@ -24,12 +25,21 @@ def Scheduler(schedule, employes):
     return schedule
 
 
-employe1 = Employe("Dwight",  3, ["monday", "tuesday", "wednesday", "thursday"])
-employe2 = Employe("Jim",     1, ["tuesday", "wednesday", "thursday", "friday"])
-employe3 = Employe("Pam",     2, ["wednesday", "thursday", "friday", "saturday"])
-employe4 = Employe("Micheal", 4, ["thursday", "friday", "saturday", "sunday"])
+#employe1 = Employe("Dwight",  3, ["monday", "tuesday", "wednesday", "thursday"])
+#employe2 = Employe("Jim",     1, ["tuesday", "wednesday", "thursday", "friday"])
+#employe3 = Employe("Pam",     2, ["wednesday", "thursday", "friday", "saturday"])
+#employe4 = Employe("Micheal", 4, ["thursday", "friday", "saturday", "sunday"])
+#employes = [employe1, employe2, employe3, employe4]
     
-schedule = {"monday": 0, "tuesday":0,"wednesday":0, "thursday":0, "friday":0, "saturday":0, "sunday":0}
-employes = [employe1, employe2, employe3, employe4]
 
-print(Scheduler(schedule, employes))
+#data = json.load(open('test.json'))
+#print(json.dumps(data, sort_keys=True))
+a_file = open("test.json", "r")
+a_json = json.load(a_file)
+pretty_json = json.dumps(a_json, indent=4)
+a_file.close()
+
+print(pretty_json)
+
+schedule = {"monday": 0, "tuesday":0,"wednesday":0, "thursday":0, "friday":0, "saturday":0, "sunday":0}
+#print(Scheduler(schedule, employes))

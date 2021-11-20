@@ -1,8 +1,25 @@
-Dwight 
-monday, tuesday, wednesday, thursday
-Jim
-tuesday, wednesday, thursday, friday
-Pam
-wednesday, thursday, friday, saturday
-Micheal
-thursday, friday, saturday, sunday
+{
+	"employes":
+	[
+	{
+		"name":"Dwight",
+		"preferences":["monday", "tuesday", "wednesday", "thursday"]
+	}
+	,
+	{
+		"name":"Jim",
+		"preferences":["tuesday", "wednesday", "thursday", "friday"]
+	}
+	,
+	{
+		"name":"Pam",
+		"preferences":["wednesday", "thursday", "friday", "saturday"]
+	}
+	,
+	{
+		"name":"Micheal",
+		"preferences":["thursday", "friday", "saturday", "sunday"]
+	}
+	]
+	
+}
