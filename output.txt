@@ -1,1 +1,1 @@
-{'monday': 1, 'tuesday': 2, 'wednesday': 3, 'thursday': 4, 'friday': 3, 'saturday': 2, 'sunday': 1}
+{'monday': 3, 'tuesday': 5, 'wednesday': 5, 'thursday': 7, 'friday': 6, 'saturday': 3, 'sunday': 3}

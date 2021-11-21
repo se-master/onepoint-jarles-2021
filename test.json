@@ -1,31 +1,9 @@
-}
-	"employe1":
+{
+	"name": "Jim"
+	,
+	"days": 
 	[
-	{
-		"name":"Dwight"
-		"preferences":["monday", "tuesday", "wednesday", "thursday"]
-	}
+		"Monday",
+		"Tuesday"
 	]
-	"employe2":
-	{
-	{
-		"name":"Jim",
-		"preferences":["tuesday", "wednesday", "thursday", "friday"]
-	}
-	]
-	"employe3":
-	[
-	{
-		"name":"Pam",
-		"preferences":["wednesday", "thursday", "friday", "saturday"]
-	}
-	]
-	"employe4":
-	[
-	{
-		"name":"Micheal",
-		"preferences":["thursday", "friday", "saturday", "sunday"]
-	}
-	]
-	
 }

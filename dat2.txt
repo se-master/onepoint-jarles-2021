@@ -1,0 +1,16 @@
+Dwight
+monday,tuesday,wednesday,thursday
+Jim
+tuesday,wednesday,thursday,friday
+Pam
+wednesday,thursday,friday,saturday
+Micheal
+thursday,friday,saturday,sunday
+Angela
+monday,tuesday,wednesday,thursday
+Stanley
+tuesday,thursday,friday,sunday
+Oscar
+monday,wednesday,friday,saturday
+Kevin
+thursday,friday,tuesday,sunday

@@ -1,12 +1,6 @@
 from datetime import datetime
 import json
 
-class Day():
-    def __init__(self, name):
-        self.name = ["monday", "tuesday","wednesday", "thursday", "friday", "saturday", "sunday"]
-class Week(Day):
-    def __init__(self, amount):
-        self.amount = 7
 class Employe():
     def __init__(self, name, preference):
         self.name = name
@@ -23,24 +17,14 @@ def Scheduler(schedule, employes):
             schedule[employes[i].preference[j]] += 1
     return schedule
 
-
-
-with open("dat2.txt", "r") as f:
-    f.seek(0)
-    data = []
-    for line in f:
-        data.append(line.splitlines())
-
-    limit = int(len(data)/2)
-    days = []
-    for i in range(limit):
-        days.append(str(data[2*i+1]).replace("[","").replace("]","").replace("'","").split(','))
-    employes = []
-    for i in range(limit):
-            employes.append(Employe(str(data[2*i]), days[i]))
+with open('test.json') as f:
+    data = json.load(f)
+    print(data['name'])
 
 
 schedule = {"monday": 0, "tuesday":0,"wednesday":0, "thursday":0, "friday":0, "saturday":0, "sunday":0}
+
 #print(Scheduler(schedule, employes))
-print(Scheduler(schedule, employes), file=open("output.txt", "a"))
-print("\nAllez voir output.txt pour voir le résultat! :)")
+
+#print(Scheduler(schedule, employes), file=open("output.txt", "a"))
+#print("\nAllez voir output.txt pour voir le résultat! :)")
