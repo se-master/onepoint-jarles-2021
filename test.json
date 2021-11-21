@@ -1,21 +1,27 @@
-{
-	"employes":
+}
+	"employe1":
 	[
 	{
-		"name":"Dwight",
+		"name":"Dwight"
 		"preferences":["monday", "tuesday", "wednesday", "thursday"]
 	}
-	,
+	]
+	"employe2":
+	{
 	{
 		"name":"Jim",
 		"preferences":["tuesday", "wednesday", "thursday", "friday"]
 	}
-	,
+	]
+	"employe3":
+	[
 	{
 		"name":"Pam",
 		"preferences":["wednesday", "thursday", "friday", "saturday"]
 	}
-	,
+	]
+	"employe4":
+	[
 	{
 		"name":"Micheal",
 		"preferences":["thursday", "friday", "saturday", "sunday"]

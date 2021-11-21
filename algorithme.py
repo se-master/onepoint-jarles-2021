@@ -8,9 +8,8 @@ class Week(Day):
     def __init__(self, amount):
         self.amount = 7
 class Employe():
-    def __init__(self, name, exp, preference):
+    def __init__(self, name, preference):
         self.name = name
-        self.exp = exp
         self.preference = preference
 
 ref = ["monday", "tuesday","wednesday", "thursday", "friday", "saturday", "sunday"]
@@ -25,21 +24,21 @@ def Scheduler(schedule, employes):
     return schedule
 
 
-#employe1 = Employe("Dwight",  3, ["monday", "tuesday", "wednesday", "thursday"])
-#employe2 = Employe("Jim",     1, ["tuesday", "wednesday", "thursday", "friday"])
-#employe3 = Employe("Pam",     2, ["wednesday", "thursday", "friday", "saturday"])
-#employe4 = Employe("Micheal", 4, ["thursday", "friday", "saturday", "sunday"])
-#employes = [employe1, employe2, employe3, employe4]
-    
+with open("dat.txt", "r") as f:
+    f.seek(0)
+    data = []
+    for line in f:
+        data.append(line.splitlines())
 
-#data = json.load(open('test.json'))
-#print(json.dumps(data, sort_keys=True))
-a_file = open("test.json", "r")
-a_json = json.load(a_file)
-pretty_json = json.dumps(a_json, indent=4)
-a_file.close()
+    limit = int(len(data)/2)
+    days = []
+    for i in range(limit):
+        days.append(str(data[2*i+1]).replace("[","").replace("]","").replace("'","").split(','))
+    employes = []
+    for i in range(limit):
+            employes.append(Employe(str(data[2*i]), days[i]))
 
-print(pretty_json)
 
 schedule = {"monday": 0, "tuesday":0,"wednesday":0, "thursday":0, "friday":0, "saturday":0, "sunday":0}
 #print(Scheduler(schedule, employes))
+print(Scheduler(schedule, employes), file=open("output.txt", "a"))
