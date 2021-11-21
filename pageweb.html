@@ -6,41 +6,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body >
     
-    <p>
-        <input type="text" placeholder="Name">
-    </p>
+
 
 <div class="a">
     <h1>
-
     Indiquer quatre journées où vous préféreriez travailler pour la semaine prochaine
 </h1>
-
 <div/>
     
 </body>
-<form>
-    <label for="monday"><input id="monday" type="checkbox" name="day"> Monday</label><br>
-    <label for="tuesday"><input id="tuesday" type="checkbox" name="day"> Tuesday</label><br>
-    <label for="wednesday"><input id="wednesday" type="checkbox" name="day"> Wednesday</label><br>
-    <label for="thursday"><input id="thursday" type="checkbox" name="day"> Thursday</label><br>
-  <label for="friday"><input id="friday" type="checkbox" name="day"> Friday</label><br>
-    <label for="saturday"><input id="saturday" type="checkbox" name="day"> Saturday</label> <br>
-    <label for="sunday"><input id="sunday" type="checkbox" name="day"> Sunday</label>
+    <form name="date"  method="get">
+        <div class="c">
+            Name: <input type="text" id="Name" name="Name">
+            </div>
+                <label for="monday"><input id="monday" type="checkbox" name="day"> Monday</label><br>
+                <label for="tuesday"><input id="tuesday" type="checkbox" name="day"> Tuesday</label><br>
+                <label for="wednesday"><input id="wednesday" type="checkbox" name="day"> Wednesday</label><br>
+                <label for="thursday"><input id="thursday" type="checkbox" name="day"> Thursday</label><br>
+                <label for="friday"><input id="friday" type="checkbox" name="day"> Friday</label><br>
+                <label for="saturday"><input id="saturday" type="checkbox" name="day"> Saturday</label> <br>
+                <label for="sunday"><input id="sunday" type="checkbox" name="day"> Sunday</label>
+            <div class="b">
 
-</form>
-<div class="b">
-
-    <button type="submit">Submit</button>
-</div>
+            
+        </div>
+    </form>
+    <button onclick="saveToJson()">Submit</button>
 <style>
     div.a{
         text-align: center;
-
     }
     div.b{
         text-align: right;
@@ -55,5 +54,86 @@
     h1 {
         color: black
     }
+    div.c {
+        text-align: left;
+    }
 </style>
+<script>
+
+function saveToJson(){
+   
+   
+
+    const data = {
+        prenom: document.getElementById("Name").value,
+        jours: getJours()
+    }
+    
+    const jsonData = JSON.stringify(data)
+    var blob = new Blob([jsonData], {type: "application/json"});
+    var url  = URL.createObjectURL(blob);
+
+    var a = document.createElement('a');
+    a.download    = "comm.json";
+    a.href        = url;
+    a.textContent = "comm.json";
+    a.click()
+}
+function getJours() {
+        var infos = [];
+        var cb1 = document.getElementById("monday");
+        if (cb1.checked ==true) {
+            var mon = cb1.id;
+            infos.push(mon);
+            
+        }
+ 
+        var cb2 = document.getElementById("tuesday");
+        if (cb2.checked ==true) {
+            var tue = cb2.id;
+            infos.push(tue);
+        
+        }
+   
+        var cb3 = document.getElementById("wednesday");
+        if (cb3.checked ==true) {
+            var wed = cb3.id;
+            infos.push(wed);
+            
+        }
+   
+        var cb4 = document.getElementById("thursday");
+        if (cb4.checked ==true) {
+            var thu = cb4.id;
+            infos.push(thu);
+           
+        }
+ 
+        var cb5 = document.getElementById("friday");
+        if (cb5.checked ==true) {
+            var fri = cb5.id;
+            infos.push(fri);
+       
+        }
+
+        var cb6 = document.getElementById("saturday");
+        if (cb6.checked ==true) {
+            var sat = cb6.id;
+            infos.push(sat);
+          
+        }
+
+        var cb7 = document.getElementById("sunday");
+        if (cb7.checked ==true) {
+            var sun = cb7.id;
+            infos.push(sun);
+          
+        }
+
+        return infos;
+
+    }
+
+
+</script>
 </html>
